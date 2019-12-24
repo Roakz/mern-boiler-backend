@@ -1,0 +1,17 @@
+{
+  "name": "mern-boilerplate",
+  "version": "1.0.0",
+  "description": "A MERN Boilerplate. React, Express & Mongo.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Roarkz",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
