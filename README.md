@@ -6,6 +6,7 @@ The boilerplate is set up in an MVC Archtiectural pattern.
 
 **to do**
 
+- set up a pubkey for github before continuing and push it up
 - refactor the routes functions into a controller.
 - set up a models directory and build a schema.
 - initialize the schema with some data ... look into seeds?
