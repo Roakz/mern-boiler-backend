@@ -1,2 +1,12 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
+const UserSchema = new mongoose.Schema({
+	username: {
+        type: String,
+        required: true
+	}
+})
+
+const UserModel = mongoose.model('users', UserSchema)
+
+module.exports = { UserModel, UserSchema }

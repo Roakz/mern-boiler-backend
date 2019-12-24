@@ -1,12 +1,8 @@
+const {UserModel} = require('../models/users')
 
 
-
-let index = (req, res) => {
-    const users = [
-        {id: 1, firstName: "John", lastName: "Doe"},
-        {id: 2, firstName: "Beverly", lastName: "Hills"},
-        {id: 3, firstName: "Meerkat", lastName: "Bob"} 
-    ]   
+let index = async (req, res) => {
+    let users = await UserModel.find()
     res.json(users)
 }
 
