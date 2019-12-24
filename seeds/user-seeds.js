@@ -1,8 +1,8 @@
-let User = require('../models/users')
+const User = require('../models/users')
+const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/mern-boilerplate', {
-	userNewUrlParser: true
-})
+
+mongoose.connect('mongodb://localhost/mern-boilerplate')
 
 let users = [
 	new User({
@@ -19,9 +19,9 @@ let users = [
 let done = 0
 
 for (let i = 0; i < users.length; i++) {
-	products[i].save((err, result) => {
+	users[i].save((err, result) => {
 		done++
-		if (done === products.length) {
+		if (done === users.length) {
             exit()
 		}
 	})
