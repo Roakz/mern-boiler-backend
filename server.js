@@ -31,7 +31,8 @@ mongoose.connection.on('error', err => console.log(err))
 app.use(cors({
     origin: process.env.FRONT_END_DOMAIN
 }));
-
+app.use(express.json())
+app.use(express.urlencoded())
 // Directing express to use the router from the routes.js file for backend api serving.
 app.use(routes)
 

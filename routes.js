@@ -7,7 +7,7 @@ const router = express.Router()
 
 // creating a get route at the url /api/users. It then accepts the callback usersController.index
 // this is the index method from the usersController file that we required above.
-router.get("/api/users", usersController.index )
+router.post("/register", usersController.registerUser )
 
 // exporting the express router. This will be used by the server.js file to assign the use of these routes 
 // to the app.

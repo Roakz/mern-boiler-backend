@@ -1,14 +1,27 @@
 // Requiring the User model created in models/user.js
 const User = require('../models/users')
+const bcrypt = require('bcrypt')
 
-// The callback funtion that is called by the router in the routes file which is activated upon a HTTP GET
-// request to "http://localhost:5000/api/users"
-// we use mongoose to apply a query on the MongoDB user collection in the mern-boilerplate document.
-let index = async (req, res) => {
-    let users = await User.find()
-    res.json(users)
+// Create User
+const registerUser = async (req, res) => {
+	bcrypt.hash(req.body.password, 10, async function(err, hash) {
+		if (err) {
+			console.log(err)
+		}
+
+		try {
+			let user = User.create({ email: req.body.email, password: hash })
+			if (user) {
+				res.send('User created')
+				res.status(200).send()
+			}
+		} catch (e) {
+			console.log(e)
+			res.status(500).send()
+		}
+	})
 }
 // exporting the above functions so that they can be refered to in the router.
 module.exports = {
-    index,
+	registerUser
 }
