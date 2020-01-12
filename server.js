@@ -10,8 +10,7 @@ const express = require('express')
 const routes = require('./routes')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const passport = require('passport')
-require('./config/passport-config')(passport)
+
 
 // creating an instance of express. We can do this now that we have required it
 const app = express()
@@ -35,7 +34,6 @@ app.use(cors({
 }));
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
-app.use(passport.initialize())
 // Directing express to use the router from the routes.js file for backend api serving.
 app.use(routes)
 
