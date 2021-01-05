@@ -10,7 +10,7 @@
   "author": "Roarkz",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.7",
     "concurrently": "^5.0.2",
     "cors": "^2.8.5",
